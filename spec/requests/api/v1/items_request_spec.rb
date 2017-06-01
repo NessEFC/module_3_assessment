@@ -6,7 +6,22 @@ RSpec.describe "Item API" do
 
     get "/api/v1/items"
 
+    items = JSON.parse(response.body)
+
     expect(response).to be_success
-    expect(Item.count).to eq(3)
+    expect(items.count).to eq(3)
+  end
+
+  it "Displays a single item" do
+    item = create(:item)
+    id = item.id
+
+    get "/api/v1/items/#{id}"
+
+    expect(response).to be_success
+
+    item = JSON.parse(response.body)
+
+    expect(item["id"]).to eq(id)
   end
 end
