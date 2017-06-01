@@ -21,7 +21,9 @@ RSpec.feature "As a user" do
 
       expect(current_path).to eq('/search')
       expect(page).to have_content("16 Total Stores")
-      
+
+      expect(page).to have_content("FIRST STORE DATA")
+      expect(page).to have_content("LAST STORE DATA")
 
     end
   end
