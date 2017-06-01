@@ -15,7 +15,7 @@ RSpec.feature "As a user" do
 
       visit '/'
 
-      fill_in "search-box", with: "80202"
+      fill_in "search_box", with: "80202"
 
       click_on "search"
 
