@@ -37,4 +37,24 @@ RSpec.describe "Item API" do
     expect(response).to be_success
     expect(Item.count).to eq(0)
   end
+
+  it "Creates an item" do
+    item = create(:item)
+    id = item.id
+    name = item.name
+
+    expect(Item.count).to eq(1)
+
+    item_params = { name: "Computer", description: "Good computer.", image_url: "url" }
+
+    post "/api/v1/items", { item: item_params }
+
+    new_item = Item.last
+
+    expect(response).to be_success
+    expect(Item.count).to eq(2)
+    expect(new_item.name).to eq("Computer")
+    expect(new_item.description).to eq("Good computer.")
+    expect(new_item.image_url).to eq("url")
+  end
 end
