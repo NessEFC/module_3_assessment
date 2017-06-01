@@ -22,9 +22,17 @@ RSpec.feature "As a user" do
       expect(current_path).to eq('/search')
       expect(page).to have_content("16 Total Stores")
 
-      expect(page).to have_content("FIRST STORE DATA")
-      expect(page).to have_content("LAST STORE DATA")
+      expect(page).to have_content("BEST BUY MOBILE - CHERRY CREEK SHOPPING CENTER")
+      expect(page).to have_content("DENVER")
+      expect(page).to have_content("3.45")
+      expect(page).to have_content("303-270-9189")
+      expect(page).to have_content("Mobile SAS")
 
+      expect(page).to have_content("BEST BUY - SOUTHGLENN")
+      expect(page).to have_content("CENTENNIAL")
+      expect(page).to have_content("11.02")
+      expect(page).to have_content("303-797-3246")
+      expect(page).to have_content("Big Box")
     end
   end
 end
