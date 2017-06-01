@@ -1,11 +1,11 @@
 class Store
 
-  attr_reader :total, :name, :city, :distance, :phone, :type
+  attr_reader :name, :city, :distance, :phone, :type, :total
 
   def initialize(attrs={})
     @name = attrs[:longName]
     @city = attrs[:city]
-    @distance = attrs[:ditance]
+    @distance = attrs[:distance]
     @phone = attrs[:phone]
     @type = attrs[:storeType]
   end
