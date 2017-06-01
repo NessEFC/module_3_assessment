@@ -14,7 +14,7 @@ require 'support/factory_girl'
 VCR.configure do |config|
   config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
   config.hook_into :webmock
-  config.filter_sensitive_data('<WEATHER_UNDERGROUND_KEY>') { ENV['WEATHER_UNDERGROUND_KEY'] }
+  config.filter_sensitive_data('<BEST_BUY_KEY>') { ENV['BEST_BUY_KEY'] }
 end
 
 DatabaseCleaner.strategy = :truncation
