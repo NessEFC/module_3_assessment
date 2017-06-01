@@ -11,6 +11,7 @@ require 'rails_helper'
 
 RSpec.feature "As a user" do
   scenario "they can search for nearby stores using their zipcode" do
+    skip
     VCR.use_cassette("search_by_zip") do
 
       visit '/'
