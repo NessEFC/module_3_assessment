@@ -24,4 +24,17 @@ RSpec.describe "Item API" do
 
     expect(item["id"]).to eq(id)
   end
+
+  it "Deletes an item" do
+    item = create(:item)
+    id = item.id
+    name = item.name
+
+    expect(Item.count).to eq(1)
+
+    delete "/api/v1/items/#{id}"
+
+    expect(response).to be_success
+    expect(Item.count).to eq(0)
+  end
 end

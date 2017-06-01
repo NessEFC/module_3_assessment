@@ -8,4 +8,9 @@ class Api::V1::ItemsController < ApplicationController
     render json: Item.find(params[:id])
   end
 
+  def destroy
+    Item.delete(params[:id])
+    render json: { head: :no_content }
+  end
+
 end
